@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+  <meta name="bingbot" content="index, follow, max-snippet:-1"/>
+  <meta name="yandex" content="index, follow"/>
+  <meta name="slurp" content="index, follow"/>
+  <meta name="duckduckbot" content="index, follow"/>
+  <b:if cond='data:blog.url'>
+    <link rel="canonical" expr:href='data:blog.canonicalHomepageUrl'/>
+  </b:if>
+
+  <link rel="alternate" hreflang="tr" expr:href='data:blog.canonicalHomepageUrl'/>
+  <link rel="alternate" hreflang="x-default" expr:href='data:blog.canonicalHomepageUrl'/>
+
+  <meta property="og:locale" content="tr_TR"/>
+  <meta property="og:site_name" content="DMOZ Web Dizini"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Site Haritası - DMOZ Web Dizini"/>
+  <meta property="og:description" content="DMOZ Web Dizini site haritası. Tüm kategoriler ve siteler."/>
+  <meta property="og:url" expr:content='data:blog.canonicalHomepageUrl'/>
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Site Haritası - DMOZ Web Dizini"/>
+  <meta name="twitter:description" content="DMOZ Web Dizini site haritası."/>
+
+  <meta name="description" content="DMOZ Web Dizini site haritası. Tüm kategoriler, siteler ve sayfalar. SEO uyumlu sitemap."/>
+  <meta name="keywords" content="sitemap, site haritası, dmoz, web dizini, xml sitemap"/>
+  <meta name="author" content="DMOZ Web Dizini"/>
+  <meta name="theme-color" content="#16a34a"/>
+
+  <link rel="preconnect" href="https://erygxodyxjayxszxugwp.supabase.co" crossorigin="anonymous"/>
+  <link rel="dns-prefetch" href="https://www.google.com"/>
+  <link rel="dns-prefetch" href="https://www.bing.com"/>
+
+  <link rel="sitemap" type="application/xml" title="DMOZ Sitemap" href="sitemap.xml"/>
+  <link rel="alternate" type="application/rss+xml" title="DMOZ - Yeni Siteler" href="https://d-mozz.blogspot.com/feeds/posts/default"/>
+
+  <title>Site Haritası - DMOZ Web Dizini</title>
+
+  <link rel="preload" href="https://cepfixpayas.github.io/ad.github.io/supabase-js@2" as="script"/>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" crossorigin="anonymous"/>
+
+  <script src="https://cepfixpayas.github.io/ad.github.io/supabase-js@2" defer="defer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+  <link rel="icon" type="image/x-icon" expr:href='data:blog.canonicalHomepageUrl + "/favicon.ico"'/>
+  <link rel="shortcut icon" type="image/x-icon" expr:href='data:blog.canonicalHomepageUrl + "/favicon.ico"'/>
+  <link rel="apple-touch-icon" expr:href='data:blog.canonicalHomepageUrl + "/favicon.ico"'/>
+
+  <style>
+    /*<![CDATA[*/
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --p50:#f0fdf4;--p100:#dcfce7;--p200:#bbf7d0;--p300:#86efac;--p400:#4ade80;
+      --p500:#22c55e;--p600:#16a34a;--p700:#15803d;--p800:#166534;--p900:#14532d;
+      --a400:#60a5fa;--a500:#3b82f6;--a600:#2563eb;
+      --s400:#fbbf24;--s500:#f59e0b;
+      --ok:#16a34a;--warn:#f59e0b;--err:#dc2626;--info:#3b82f6;
+      --n50:#fafafa;--n100:#f5f5f5;--n200:#e5e5e5;--n300:#d4d4d4;--n400:#a3a3a3;
+      --n500:#737373;--n600:#525252;--n700:#404040;--n800:#262626;--n900:#171717;
+      --glass:rgba(255,255,255,0.7);--gborder:rgba(255,255,255,0.5);
+      --blur:12px;--sh1:0 1px 3px rgba(0,0,0,0.08);--sh2:0 4px 16px rgba(0,0,0,0.1);
+      --sh3:0 12px 40px rgba(0,0,0,0.14);--glow:0 0 20px rgba(34,197,94,0.35);
+      --font:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;
+      --font-mono:'JetBrains Mono','Fira Code',monospace;
+      --r1:8px;--r2:12px;--r3:18px;--r4:24px;
+      --tf:150ms ease;--tm:280ms cubic-bezier(.4,0,.2,1);
+      --header-height:64px;--header-height-mobile:56px;
+    }
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-size:16px}
+    body{font-family:var(--font);color:var(--n800);line-height:1.6;min-height:100vh;background:radial-gradient(1200px 600px at 10% -10%,var(--p100),transparent 60%),radial-gradient(1000px 500px at 110% 10%,rgba(96,165,250,0.2),transparent 55%),linear-gradient(180deg,var(--p50),var(--n50));overflow-x:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--p700);text-decoration:none;transition:color var(--tf)}
+    a:hover{color:var(--p800)}
+    button{font-family:inherit;cursor:pointer;border:none;background:none}
+    ul{list-style:none}
+    :focus-visible{outline:3px solid var(--a500);outline-offset:2px;border-radius:4px}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip{position:absolute;left:-9999px;top:0;background:var(--p700);color:#fff;padding:12px 20px;z-index:9999;border-radius:0 0 8px 0;font-weight:600;transition:left var(--tf)}
+    .skip:focus{left:0}
+    .container{max-width:1280px;margin:0 auto;padding:0 16px}
+    .hdr{position:sticky;top:0;z-index:100;background:var(--glass);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border-bottom:1px solid var(--gborder);box-shadow:var(--sh1);height:var(--header-height);will-change:transform;transition:transform var(--tm),box-shadow var(--tm)}
+    .hdr.scrolled{box-shadow:var(--sh2)}
+    .hdr-in{display:flex;align-items:center;gap:16px;padding:8px 0;height:100%;max-width:100%}
+    @media(max-width:768px){.hdr{height:var(--header-height-mobile)}.hdr-in{gap:10px;padding:6px 0;flex-wrap:nowrap}}
+    @media(max-width:480px){.hdr-in{gap:8px}}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.35rem;color:var(--p800);white-space:nowrap;cursor:pointer;flex-shrink:0;transition:transform var(--tf)}
+    .logo:hover{transform:scale(1.02)}
+    .logo-ic{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--p500),var(--p700));display:grid;place-items:center;color:#fff;font-size:1.3rem;box-shadow:var(--glow);flex-shrink:0}
+    .logo-tx{background:linear-gradient(90deg,var(--p700),var(--p500));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    @media(max-width:640px){.logo{font-size:1.1rem;gap:8px}.logo-ic{width:38px;height:38px;font-size:1.1rem;border-radius:12px}}
+    @media(max-width:480px){.logo{font-size:1rem}.logo-ic{width:34px;height:34px;font-size:1rem}}
+    .nav{display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:var(--r2);font-weight:600;font-size:0.92rem;transition:transform var(--tf),box-shadow var(--tf),background var(--tf);white-space:nowrap;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+    .btn:active{transform:translateY(1px)}
+    .btn-p{background:linear-gradient(135deg,var(--p500),var(--p600));color:#fff;box-shadow:var(--sh2)}
+    .btn-p:hover{box-shadow:var(--glow);transform:translateY(-1px)}
+    .btn-g{background:rgba(255,255,255,0.7);color:var(--p700);border:2px solid var(--n200)}
+    .btn-g:hover{background:var(--p50);border-color:var(--p300)}
+    @media(max-width:768px){.btn{padding:10px 16px;font-size:0.88rem}.nav{gap:8px}}
+    @media(max-width:480px){.btn{padding:8px 12px;font-size:0.82rem;border-radius:10px}.nav{gap:6px}}
+    .main{padding:24px 0}
+    .page-hd{text-align:center;margin-bottom:32px;padding:32px 0 24px}
+    .page-hd h1{font-size:2rem;color:var(--p800);font-weight:800;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:12px}
+    .page-hd h1 i{color:var(--p600)}
+    .page-hd p{font-size:1rem;color:var(--n600);max-width:600px;margin:0 auto}
+    @media(max-width:640px){.page-hd h1{font-size:1.5rem}.page-hd p{font-size:0.9rem}}
+    .stats-bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:32px}
+    .stat-card{background:var(--glass);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border:1px solid var(--gborder);border-radius:var(--r2);padding:16px 24px;text-align:center;min-width:120px;box-shadow:var(--sh1)}
+    .stat-card .num{font-size:1.8rem;font-weight:800;color:var(--p700);line-height:1.2}
+    .stat-card .lbl{font-size:0.78rem;color:var(--n500);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+    @media(max-width:480px){.stat-card{padding:12px 16px;min-width:90px}.stat-card .num{font-size:1.4rem}}
+    .sm-section{background:var(--glass);backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));border:1px solid var(--gborder);border-radius:var(--r3);padding:24px;box-shadow:var(--sh1);margin-bottom:24px}
+    .sm-section h2{font-size:1.3rem;color:var(--p800);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .sm-section h2::before{content:'';width:6px;height:24px;background:linear-gradient(180deg,var(--p500),var(--p700));border-radius:3px;display:inline-block}
+    .sm-section h2 .count{font-size:0.85rem;color:var(--n500);font-weight:600;background:var(--n100);padding:3px 12px;border-radius:999px}
+    @media(max-width:640px){.sm-section{padding:18px}.sm-section h2{font-size:1.1rem}}
+    .sm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+    .sm-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--n200);border-radius:var(--r2);background:#fff;transition:all var(--tf);text-decoration:none}
+    .sm-item:hover{border-color:var(--p400);box-shadow:var(--sh1);transform:translateY(-2px)}
+    .sm-item .ic{width:40px;height:40px;border-radius:10px;background:var(--p100);display:grid;place-items:center;color:var(--p700);flex-shrink:0;font-size:1.1rem}
+    .sm-item .ic img{width:24px;height:24px;border-radius:4px;object-fit:cover}
+    .sm-item .info{flex:1;min-width:0}
+    .sm-item .name{font-size:0.92rem;font-weight:600;color:var(--n800);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sm-item .url{font-size:0.76rem;color:var(--n500);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+    .sm-item .meta{font-size:0.72rem;color:var(--n400);display:flex;gap:10px;margin-top:4px}
+    .sm-item .meta span{display:inline-flex;align-items:center;gap:3px}
+    .sm-cat-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--n200);border-radius:var(--r2);background:#fff;transition:all var(--tf);text-decoration:none;cursor:pointer}
+    .sm-cat-item:hover{border-color:var(--p400);box-shadow:var(--sh1);transform:translateY(-2px)}
+    .sm-cat-item .ic{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--p100),var(--p200));display:grid;place-items:center;color:var(--p700);flex-shrink:0;font-size:1.1rem}
+    .sm-cat-item .info{flex:1;min-width:0}
+    .sm-cat-item .name{font-size:0.95rem;font-weight:700;color:var(--n800)}
+    .sm-cat-item .count{font-size:0.76rem;color:var(--n500);margin-top:2px}
+    .sm-cat-item .arrow{color:var(--n300);font-size:0.8rem;transition:color var(--tf)}
+    .sm-cat-item:hover .arrow{color:var(--p600)}
+    .sm-pagi{display:flex;justify-content:center;gap:8px;margin:24px 0;flex-wrap:wrap}
+    .sm-pbtn{padding:10px 16px;border:2px solid var(--n200);border-radius:8px;background:#fff;font-weight:600;color:var(--n600);transition:all var(--tf);cursor:pointer}
+    .sm-pbtn:hover{border-color:var(--p400);color:var(--p700)}
+    .sm-pbtn.act{background:var(--p600);color:#fff;border-color:var(--p600)}
+    .sm-pbtn:disabled{opacity:0.4;cursor:not-allowed}
+    .sm-search{position:relative;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto}
+    .sm-search-ic{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--n400);font-size:1.1rem;pointer-events:none}
+    .sm-search-in{width:100%;padding:14px 18px 14px 50px;border:2px solid var(--n200);border-radius:var(--r3);background:rgba(255,255,255,0.95);box-shadow:var(--sh1);font-size:1rem;transition:border var(--tf),box-shadow var(--tf);color:var(--n800)}
+    .sm-search-in:focus{border-color:var(--p500);box-shadow:0 0 0 4px var(--p100),var(--sh1);outline:none;background:#fff}
+    .sm-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;justify-content:center}
+    .sm-tab{padding:10px 20px;border-radius:var(--r2);font-weight:600;font-size:0.9rem;background:rgba(255,255,255,0.7);color:var(--n600);border:2px solid var(--n200);transition:all var(--tf);cursor:pointer}
+    .sm-tab:hover{border-color:var(--p300);color:var(--p700)}
+    .sm-tab.act{background:linear-gradient(135deg,var(--p500),var(--p600));color:#fff;border-color:var(--p600)}
+    .sm-empty{text-align:center;padding:48px 24px;color:var(--n500)}
+    .sm-empty i{font-size:3rem;margin-bottom:12px;opacity:0.4}
+    .sm-empty p{margin:8px 0}
+    .sm-loading{display:flex;align-items:center;justify-content:center;gap:12px;padding:48px 24px;color:var(--n500)}
+    .sm-spin{width:36px;height:36px;border:3px solid var(--p100);border-top-color:var(--p500);border-radius:50%;animation:sp 800ms linear infinite}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    .sm-xml-box{background:var(--n900);color:var(--p300);border-radius:var(--r2);padding:20px;font-family:var(--font-mono);font-size:0.82rem;overflow-x:auto;line-height:1.6;max-height:400px;overflow-y:auto;margin-top:16px}
+    .sm-xml-box .tag{color:var(--p400)}
+    .sm-xml-box .attr{color:var(--s400)}
+    .sm-xml-box .val{color:#e0e0e0}
+    .sm-xml-box .comment{color:var(--n500)}
+    .sm-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+    .ftr{background:linear-gradient(180deg,#0f2a1a 0%,var(--p900) 100%);color:var(--n300);margin-top:56px;position:relative;overflow:hidden}
+    .ftr::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--p700),var(--p500),var(--a500),var(--p500),var(--p700));background-size:200% 100%;animation:borderGlow 4s linear infinite}
+    @keyframes borderGlow{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .ftr-inner{position:relative;z-index:1}
+    .ftr-b{display:flex;flex-direction:column;align-items:center;gap:10px;padding:24px 0;text-align:center}
+    @media(min-width:768px){.ftr-b{flex-direction:row;justify-content:space-between;text-align:left}}
+    .ftr-b-copy{font-size:0.85rem;color:rgba(255,255,255,0.35)}
+    .ftr-b-copy strong{color:rgba(255,255,255,0.6)}
+    .toast-c{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column;gap:10px;max-width:400px}
+    .toast{background:var(--n900);color:#fff;padding:16px 22px;border-radius:var(--r2);box-shadow:var(--sh3);font-size:0.9rem;display:flex;align-items:center;gap:12px;animation:tin 300ms cubic-bezier(.4,0,.2,1);border-left:4px solid var(--p500)}
+    .toast.ok{border-left-color:var(--ok)}
+    .toast.err{border-left-color:var(--err)}
+    .toast.hide{animation:tout 300ms forwards}
+    @keyframes tin{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
+    @keyframes tout{to{transform:translateX(120%);opacity:0}}
+    @media(max-width:640px){.toast-c{left:16px;right:16px;bottom:16px;max-width:none}}
+    @media print{.hdr,.ftr,.toast-c{display:none!important}body{background:#fff}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
+    /*]]>*/
+  </style>
+</head>
+<body>
+  <a href="#smMain" class="skip">İçeriğe geç</a>
+
+  <header class="hdr" role="banner">
+    <div class="container hdr-in">
+      <div class="logo" id="smLogo" role="button" tabindex="0" aria-label="Ana sayfa">
+        <span class="logo-ic"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+        <span class="logo-tx">DMOZ Dizini</span>
+      </div>
+      <nav class="nav" aria-label="Ana menü">
+        <button class="btn btn-p" id="smHomeBtn" aria-label="Ana sayfa">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span class="btn-text">Ana Sayfa</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="smMain" class="container">
+    <div class="main">
+      <div class="page-hd">
+        <h1><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Site Haritası</h1>
+        <p>DMOZ Web Dizini'ndeki tüm kategoriler, siteler ve sayfalar. Arama motorları için SEO uyumlu site haritası.</p>
+      </div>
+
+      <div class="stats-bar" id="smStats">
+        <div class="stat-card"><div class="num" id="smCatCount">-</div><div class="lbl">Kategori</div></div>
+        <div class="stat-card"><div class="num" id="smSiteCount">-</div><div class="lbl">Site</div></div>
+        <div class="stat-card"><div class="num" id="smTotalUrls">-</div><div class="lbl">URL</div></div>
+        <div class="stat-card"><div class="num" id="smLastUpdate">-</div><div class="lbl">Güncelleme</div></div>
+      </div>
+
+      <div class="sm-actions">
+        <button class="btn btn-g" id="smDownloadXml"><i class="fa-solid fa-download" aria-hidden="true"></i> XML Sitemap İndir</button>
+        <button class="btn btn-g" id="smCopyUrls"><i class="fa-solid fa-copy" aria-hidden="true"></i> URL'leri Kopyala</button>
+        <button class="btn btn-g" id="smPingGoogle"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Google'a Ping At</button>
+      </div>
+
+      <div class="sm-tabs">
+        <button class="sm-tab act" data-tab="sites"><i class="fa-solid fa-globe" aria-hidden="true"></i> Siteler</button>
+        <button class="sm-tab" data-tab="cats"><i class="fa-solid fa-folder" aria-hidden="true"></i> Kategoriler</button>
+        <button class="sm-tab" data-tab="xml"><i class="fa-solid fa-code" aria-hidden="true"></i> XML Görünüm</button>
+      </div>
+
+      <div class="sm-search">
+        <span class="sm-search-ic" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <label for="smSearchInput" class="sr-only">Site veya kategori ara</label>
+        <input type="search" id="smSearchInput" class="sm-search-in" placeholder="Site veya kategori ara..." autocomplete="off"/>
+      </div>
+
+      <div id="smTabSites" class="sm-tab-content">
+        <div class="sm-section">
+          <h2><i class="fa-solid fa-globe" aria-hidden="true"></i> Tüm Siteler <span class="count" id="smSitesCount">0</span></h2>
+          <div class="sm-grid" id="smSitesGrid" aria-live="polite">
+            <div class="sm-loading"><div class="sm-spin"></div><span>Yükleniyor...</span></div>
+          </div>
+          <div class="sm-pagi" id="smSitesPagi"></div>
+        </div>
+      </div>
+
+      <div id="smTabCats" class="sm-tab-content" style="display:none">
+        <div class="sm-section">
+          <h2><i class="fa-solid fa-folder" aria-hidden="true"></i> Kategoriler <span class="count" id="smCatsCount">0</span></h2>
+          <div class="sm-grid" id="smCatsGrid" aria-live="polite">
+            <div class="sm-loading"><div class="sm-spin"></div><span>Yükleniyor...</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="smTabXml" class="sm-tab-content" style="display:none">
+        <div class="sm-section">
+          <h2><i class="fa-solid fa-code" aria-hidden="true"></i> XML Sitemap Önizleme</h2>
+          <p style="color:var(--n600);font-size:0.88rem;margin-bottom:12px">Bu önizleme, Google ve Bing tarafından doğrudan sitemap.xml olarak okunabilir. Aşağıdaki XML'i <code>sitemap.xml</code> adıyla kaydedip sunucuya yükleyebilirsiniz.</p>
+          <div class="sm-xml-box" id="smXmlPreview"><span class="comment">&lt;!-- XML oluşturuluyor... --&gt;</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ftr" role="contentinfo">
+    <div class="ftr-inner">
+      <div class="container">
+        <div class="ftr-b">
+          <div class="ftr-b-copy">
+            &#169; <span id="smYear"></span> <strong>DMOZ Web Dizini</strong>. Tüm hakları saklıdır.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-c" id="smToastC" aria-live="assertive"></div>
+
+  <script>
+  //<![CDATA[
+  (function(){
+    'use strict';
+
+    var SUPA_URL='https://erygxodyxjayxszxugwp.supabase.co';
+    var SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVyeWd4b2R5eGpheXhzenh1Z3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0NzUxMzIsImV4cCI6MjA5ODA1MTEzMn0.uz5tbIPBXNhupJu2xpf7eKyRSWKSAvZDiodj46qISaI';
+
+    var supaClient=null;
+    var allSites=[];
+    var allCategories=[];
+    var curTab='sites';
+    var curPage=1;
+    var perPage=24;
+    var searchQuery='';
+    var BASE_URL='https://dmozz.eu.cc';
+
+    function esc(s){if(s==null)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+    function slug(t){return String(t).toLowerCase().replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s').replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);}
+    function formatDate(ts){if(!ts)return'';var d=new Date(ts);return d.toLocaleDateString('tr-TR',{day:'2-digit',month:'short',year:'numeric'});}
+    function getDomain(url){try{return new URL(url).hostname;}catch(e){return'';}}
+
+    function toast(msg,type){
+      var c=document.getElementById('smToastC');
+      var el=document.createElement('div');
+      el.className='toast '+(type||'info');
+      var ic={ok:'<i class="fa-solid fa-check"></i>',err:'<i class="fa-solid fa-xmark"></i>',info:'<i class="fa-solid fa-circle-info"></i>'};
+      el.innerHTML='<span aria-hidden="true">'+(ic[type]||ic.info)+'</span><span>'+esc(msg)+'</span>';
+      c.appendChild(el);
+      setTimeout(function(){el.classList.add('hide');setTimeout(function(){el.remove();},300);},3500);
+    }
+
+    function getFaviconUrl(url,size){
+      if(!url)return'';
+      var domain=getDomain(url);
+      if(!domain)return'';
+      size=size||32;
+      return'https://www.google.com/s2/favicons?domain='+encodeURIComponent(domain)+'&sz='+size;
+    }
+
+    function initSupabase(){
+      if(supaClient)return true;
+      if(window.supabase&&window.supabase.createClient){
+        supaClient=window.supabase.createClient(SUPA_URL,SUPA_KEY,{auth:{persistSession:false}});
+        return true;
+      }
+      return false;
+    }
+
+    function loadData(){
+      var self=this;
+      supaClient.from('categories').select('*').order('sort_order').then(function(catRes){
+        if(catRes.error){toast('Kategoriler yüklenemedi.','err');return;}
+        allCategories=catRes.data||[];
+        document.getElementById('smCatCount').textContent=allCategories.length;
+        document.getElementById('smCatsCount').textContent=allCategories.length;
+        renderCategories();
+
+        supaClient.from('sites').select('*').order('created_at',{ascending:false}).then(function(siteRes){
+          if(siteRes.error){toast('Siteler yüklenemedi.','err');return;}
+          allSites=siteRes.data||[];
+          document.getElementById('smSiteCount').textContent=allSites.length;
+          document.getElementById('smSitesCount').textContent=allSites.length;
+          var totalUrls=allSites.length+allCategories.length+1;
+          document.getElementById('smTotalUrls').textContent=totalUrls;
+          document.getElementById('smLastUpdate').textContent=formatDate(new Date().toISOString());
+          renderSites();
+          renderXmlPreview();
+        });
+      });
+    }
+
+    function getCatById(id){return allCategories.find(function(c){return c.id===id;});}
+
+    function renderSites(){
+      var grid=document.getElementById('smSitesGrid');
+      var filtered=allSites;
+      if(searchQuery){
+        var q=searchQuery.toLowerCase();
+        filtered=allSites.filter(function(s){
+          return(s.name&&s.name.toLowerCase().indexOf(q)>=0)||(s.url&&s.url.toLowerCase().indexOf(q)>=0)||(s.description&&s.description.toLowerCase().indexOf(q)>=0);
+        });
+      }
+      var total=filtered.length;
+      var pages=Math.ceil(total/perPage);
+      if(curPage>pages&&pages>0)curPage=pages;
+      var start=(curPage-1)*perPage;
+      var sites=filtered.slice(start,start+perPage);
+
+      if(!sites.length){
+        grid.innerHTML='<div class="sm-empty"><i class="fa-solid fa-folder-open" aria-hidden="true"></i><p>'+(searchQuery?'Arama sonucu bulunamadı.':'Henüz site yok.')+'</p></div>';
+        document.getElementById('smSitesPagi').innerHTML='';
+        return;
+      }
+
+      var h='';
+      for(var i=0;i<sites.length;i++){
+        var s=sites[i];
+        var cat=getCatById(s.category_id);
+        var catName=cat?cat.name:'';
+        var fav=getFaviconUrl(s.url,32);
+        var siteUrl=BASE_URL+'/?v='+encodeURIComponent(slug(s.name));
+        h+='<a href="'+esc(siteUrl)+'" class="sm-item">';
+        h+='<div class="ic"><img src="'+esc(fav)+'" alt="" width="24" height="24" onerror="this.style.display=\'none\';this.parentElement.innerHTML=\'<i class=\\\'fa-solid fa-globe\\\'></i>\'"/></div>';
+        h+='<div class="info"><div class="name">'+esc(s.name)+'</div>';
+        h+='<div class="url">'+esc(s.url)+'</div>';
+        h+='<div class="meta"><span><i class="fa-solid fa-folder" aria-hidden="true"></i> '+esc(catName)+'</span><span><i class="fa-solid fa-eye" aria-hidden="true"></i> '+(s.views||0)+'</span><span><i class="fa-regular fa-calendar" aria-hidden="true"></i> '+formatDate(s.created_at)+'</span></div>';
+        h+='</div></a>';
+      }
+      grid.innerHTML=h;
+      renderPagination(total,'smSitesPagi');
+    }
+
+    function renderCategories(){
+      var grid=document.getElementById('smCatsGrid');
+      var filtered=allCategories;
+      if(searchQuery){
+        var q=searchQuery.toLowerCase();
+        filtered=allCategories.filter(function(c){return c.name&&c.name.toLowerCase().indexOf(q)>=0;});
+      }
+      if(!filtered.length){
+        grid.innerHTML='<div class="sm-empty"><i class="fa-solid fa-folder-open" aria-hidden="true"></i><p>'+(searchQuery?'Arama sonucu bulunamadı.':'Henüz kategori yok.')+'</p></div>';
+        return;
+      }
+      var mainCats=filtered.filter(function(c){return!c.parent_id;});
+      var h='';
+      for(var i=0;i<mainCats.length;i++){
+        var c=mainCats[i];
+        var siteCount=allSites.filter(function(s){return s.category_id===c.id;}).length;
+        var subs=allCategories.filter(function(sub){return sub.parent_id===c.id;});
+        siteCount+=allSites.filter(function(s){return subs.some(function(sub){return sub.id===s.category_id;});}).length;
+        var catUrl=BASE_URL+'/?cat='+encodeURIComponent(c.id);
+        h+='<a href="'+esc(catUrl)+'" class="sm-cat-item">';
+        h+='<div class="ic"><i class="'+(c.icon||'fa-solid fa-folder')+'" aria-hidden="true"></i></div>';
+        h+='<div class="info"><div class="name">'+esc(c.name)+'</div><div class="count">'+siteCount+' site'+(subs.length?' / '+subs.length+' alt kategori':'')+'</div></div>';
+        h+='<i class="fa-solid fa-chevron-right arrow" aria-hidden="true"></i></a>';
+      }
+      grid.innerHTML=h;
+    }
+
+    function renderPagination(total,elId){
+      var pages=Math.ceil(total/perPage);
+      var el=document.getElementById(elId);
+      if(pages<=1){el.innerHTML='';return;}
+      var h='';
+      h+='<button class="sm-pbtn" '+(curPage===1?'disabled':'')+' data-page="1"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>';
+      h+='<button class="sm-pbtn" '+(curPage===1?'disabled':'')+' data-page="'+(curPage-1)+'"><i class="fa-solid fa-angle-left" aria-hidden="true"></i></button>';
+      var sp=Math.max(1,curPage-2),ep=Math.min(pages,sp+4);
+      sp=Math.max(1,ep-4);
+      for(var p=sp;p<=ep;p++){
+        h+='<button class="sm-pbtn '+(p===curPage?'act':'')+'" data-page="'+p+'">'+p+'</button>';
+      }
+      h+='<button class="sm-pbtn" '+(curPage===pages?'disabled':'')+' data-page="'+(curPage+1)+'"><i class="fa-solid fa-angle-right" aria-hidden="true"></i></button>';
+      h+='<button class="sm-pbtn" '+(curPage===pages?'disabled':'')+' data-page="'+pages+'"><i class="fa-solid fa-angles-right" aria-hidden="true"></i></button>';
+      el.innerHTML=h;
+      var btns=el.querySelectorAll('.sm-pbtn');
+      for(var i=0;i<btns.length;i++){
+        btns[i].onclick=function(){
+          var p=parseInt(this.getAttribute('data-page'),10);
+          if(p&&p!==curPage){curPage=p;renderSites();}
+        };
+      }
+    }
+
+    function generateXmlSitemap(){
+      var now=new Date().toISOString();
+      var xml='<?xml version="1.0" encoding="UTF-8"?>\n';
+      xml+='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+      xml+='  <url>\n    <loc>'+esc(BASE_URL)+'/</loc>\n    <lastmod>'+now+'</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n';
+      for(var i=0; i<allCategories.length; i++){
+        var c=allCategories[i];
+        xml+='  <url>\n    <loc>'+esc(BASE_URL)+'/?cat='+encodeURIComponent(c.id)+'</loc>\n    <lastmod>'+now+'</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n';
+      }
+      for(var j=0; j<allSites.length; j++){
+        var s=allSites[j];
+        var lastmod=s.created_at?new Date(s.created_at).toISOString():now;
+        xml+='  <url>\n    <loc>'+esc(BASE_URL)+'/?v='+encodeURIComponent(slug(s.name))+'</loc>\n    <lastmod>'+lastmod+'</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.6</priority>\n  </url>\n';
+      }
+      xml+='</urlset>';
+      return xml;
+    }
+
+    function renderXmlPreview(){
+      var xml=generateXmlSitemap();
+      var highlighted=xml
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/&lt;\?xml/g,'<span class="tag">&lt;?xml</span>')
+        .replace(/\?&gt;/g,'<span class="tag">?&gt;</span>')
+        .replace(/&lt;urlset/g,'<span class="tag">&lt;urlset</span>')
+        .replace(/&lt;\/urlset&gt;/g,'<span class="tag">&lt;/urlset&gt;</span>')
+        .replace(/&lt;url&gt;/g,'<span class="tag">&lt;url&gt;</span>')
+        .replace(/&lt;\/url&gt;/g,'<span class="tag">&lt;/url&gt;</span>')
+        .replace(/&lt;loc&gt;/g,'<span class="tag">&lt;loc&gt;</span>')
+        .replace(/&lt;\/loc&gt;/g,'<span class="tag">&lt;/loc&gt;</span>')
+        .replace(/&lt;lastmod&gt;/g,'<span class="tag">&lt;lastmod&gt;</span>')
+        .replace(/&lt;\/lastmod&gt;/g,'<span class="tag">&lt;/lastmod&gt;</span>')
+        .replace(/&lt;changefreq&gt;/g,'<span class="tag">&lt;changefreq&gt;</span>')
+        .replace(/&lt;\/changefreq&gt;/g,'<span class="tag">&lt;/changefreq&gt;</span>')
+        .replace(/&lt;priority&gt;/g,'<span class="tag">&lt;priority&gt;</span>')
+        .replace(/&lt;\/priority&gt;/g,'<span class="tag">&lt;/priority&gt;</span>')
+        .replace(/xmlns="([^"]+)"/g,'<span class="attr">xmlns</span>="<span class="val">$1</span>"');
+      document.getElementById('smXmlPreview').innerHTML=highlighted;
+    }
+
+    function switchTab(tab){
+      curTab=tab;
+      var tabs=document.querySelectorAll('.sm-tab');
+      for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle('act',tabs[i].getAttribute('data-tab')===tab);
+      document.getElementById('smTabSites').style.display=tab==='sites'?'':'none';
+      document.getElementById('smTabCats').style.display=tab==='cats'?'':'none';
+      document.getElementById('smTabXml').style.display=tab==='xml'?'':'none';
+    }
+
+    function bindEvents(){
+      document.getElementById('smLogo').addEventListener('click',function(){window.location.href=BASE_URL+'/';});
+      document.getElementById('smLogo').addEventListener('keydown',function(e){if(e.key==='Enter')window.location.href=BASE_URL+'/';});
+      document.getElementById('smHomeBtn').addEventListener('click',function(){window.location.href=BASE_URL+'/';});
+
+      var tabs=document.querySelectorAll('.sm-tab');
+      for(var i=0;i<tabs.length;i++){
+        tabs[i].addEventListener('click',function(){switchTab(this.getAttribute('data-tab'));});
+      }
+
+      var searchInput=document.getElementById('smSearchInput');
+      var searchTimer;
+      searchInput.addEventListener('input',function(){
+        clearTimeout(searchTimer);
+        var val=this.value.trim();
+        searchTimer=setTimeout(function(){
+          searchQuery=val;
+          curPage=1;
+          renderSites();
+          renderCategories();
+        },300);
+      });
+
+      document.getElementById('smDownloadXml').addEventListener('click',function(){
+        var xml=generateXmlSitemap();
+        var blob=new Blob([xml],{type:'application/xml'});
+        var url=URL.createObjectURL(blob);
+        var a=document.createElement('a');
+        a.href=url;
+        a.download='sitemap.xml';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        toast('sitemap.xml indirildi!','ok');
+      });
+
+      document.getElementById('smCopyUrls').addEventListener('click',function(){
+        var urls=[BASE_URL+'/'];
+        for(var i=0;i<allCategories.length;i++)urls.push(BASE_URL+'/?cat='+allCategories[i].id);
+        for(var j=0;j<allSites.length;j++)urls.push(BASE_URL+'/?v='+slug(allSites[j].name));
+        var text=urls.join('\n');
+        navigator.clipboard.writeText(text).then(function(){toast(urls.length+' URL kopyalandı!','ok');}).catch(function(){toast('Kopyalama başarısız.','err');});
+      });
+
+      document.getElementById('smPingGoogle').addEventListener('click',function(){
+        var smUrl=encodeURIComponent(BASE_URL+'/sitemap.xml');
+        try{
+          fetch('https://www.google.com/ping?sitemap='+smUrl,{mode:'no-cors'}).then(function(){toast('Google\'a ping gönderildi!','ok');}).catch(function(){toast('Ping gönderilemedi.','err');});
+        }catch(e){toast('Ping hatası: '+e.message,'err');}
+        try{
+          fetch('https://www.bing.com/ping?sitemap='+smUrl,{mode:'no-cors'}).catch(function(){});
+        }catch(e){}
+      });
+    }
+
+    function boot(){
+      document.getElementById('smYear').textContent=new Date().getFullYear();
+      if(initSupabase()){
+        bindEvents();
+        loadData();
+      }else{
+        setTimeout(boot,50);
+      }
+    }
+
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+  })();
+  //]]>
+  </script>
+</body>
+</html>

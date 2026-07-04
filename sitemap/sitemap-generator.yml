@@ -1,0 +1,30 @@
+name: Generate Sitemap Automatically
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Generate Sitemap
+      run: node update_sitemap.js
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git add sitemap.xml
+        git diff-index --quiet HEAD || git commit -m "Automated sitemap update"
+        git push
