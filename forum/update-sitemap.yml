@@ -1,0 +1,37 @@
+name: Sitemap Otomatik Güncelle
+
+on:
+  schedule:
+    # Her 6 saatte bir çalışır (UTC). Sıklığı değiştirmek için cron ifadesini düzenleyin.
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}   # Actions sekmesinden elle de tetiklenebilir
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repoyu al
+        uses: actions/checkout@v4
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: sitemap.xml'i Supabase verisiyle yeniden üret
+        run: node scripts/generate-sitemap.js
+
+      - name: Değişiklik varsa commit'le ve push'la
+        run: |
+          if ! git diff --quiet -- forum/sitemap.xml; then
+            git config user.name "sitemap-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add forum/sitemap.xml
+            git commit -m "chore: sitemap.xml otomatik güncellendi"
+            git push
+          else
+            echo "sitemap.xml değişmedi, commit atlanıyor."
+          fi

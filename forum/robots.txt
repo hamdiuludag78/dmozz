@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /forum/
+
+Sitemap: https://dmozz.eu.cc/forum/sitemap.xml

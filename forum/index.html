@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>DMOZ Q&amp;A | Bilgi Paylaşım Platformu</title>
+<meta name="description" content="DMOZ Q&amp;A - Uzman topluluğuyla soru sor, cevap ver, bilgini paylaş. Yazılım, donanım, yapay zeka ve kariyer üzerine binlerce soru ve cevap."/>
+<meta name="keywords" content="soru cevap, q&amp;a, forum, bilgi paylaşımı, yazılım, yapay zeka"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="author" content="DMOZ Q&amp;A"/>
+<meta name="theme-color" content="#006b2c"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<!-- Güvenlik notu: Bu meta CSP, statik barındırmada (sunucu HTTP header'ı olmadan)
+     mümkün olan en katı ayardır. Gerçek koruma için sunucu/CDN seviyesinde
+     Content-Security-Policy, X-Content-Type-Options ve X-Frame-Options HTTP
+     header'larının da eklenmesi şiddetle önerilir (statik dosyadan eklenemezler). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https: blob:; frame-src https://www.youtube.com; connect-src 'self' https://qfilqgbtubvafcnpwtqj.supabase.co wss://qfilqgbtubvafcnpwtqj.supabase.co; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"/>
+<link rel="canonical" href="https://dmozz.eu.cc/forum/" id="canonicalLink"/>
+<link rel="alternate" hreflang="tr" href="https://dmozz.eu.cc/forum/"/>
+<link rel="alternate" hreflang="x-default" href="https://dmozz.eu.cc/forum/"/>
+<link rel="sitemap" type="application/xml" href="https://dmozz.eu.cc/forum/sitemap.xml"/>
+<!-- Performans: erken bağlantı kurulumu -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+<link rel="preconnect" href="https://qfilqgbtubvafcnpwtqj.supabase.co"/>
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net"/>
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website" id="ogType"/>
+<meta property="og:site_name" content="DMOZ Q&amp;A"/>
+<meta property="og:title" content="DMOZ Q&amp;A | Bilgi Paylaşım Platformu" id="ogTitle"/>
+<meta property="og:description" content="Uzman topluluğuyla soru sor, cevap ver, bilgini paylaş." id="ogDesc"/>
+<meta property="og:locale" content="tr_TR"/>
+<meta property="og:url" content="https://dmozz.eu.cc/forum/" id="ogUrl"/>
+<meta property="og:image" content="https://dmozz.eu.cc/forum/og-cover.png" id="ogImage"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="DMOZ Q&amp;A | Bilgi Paylaşım Platformu" id="twTitle"/>
+<meta name="twitter:description" content="Uzman topluluğuyla soru sor, cevap ver, bilgini paylaş." id="twDesc"/>
+<meta name="twitter:image" content="https://dmozz.eu.cc/forum/og-cover.png" id="twImage"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Supabase Client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- DOMPurify: kullanıcı tarafından oluşturulan zengin metin (rich text) içeriğini
+     ekrana basmadan önce temizler (stored-XSS önlemi) -->
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#00873a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#006e2d",
+                    "secondary-container": "#316bf3",
+                    "inverse-primary": "#62df7d",
+                    "surface-container": "#e5eeff",
+                    "secondary": "#0051d5",
+                    "surface": "#f8f9ff",
+                    "outline-variant": "#bdcaba",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "on-tertiary-fixed": "#131b2e",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#00174b",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#002109",
+                    "on-surface": "#0b1c30",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-background": "#0b1c30",
+                    "primary": "#006b2c",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary-container": "#fefcff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#005320",
+                    "outline": "#6e7b6c",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#7ffc97",
+                    "tertiary-fixed": "#dae2fd",
+                    "tertiary": "#545c72",
+                    "on-secondary-container": "#fefcff",
+                    "on-primary-container": "#f7fff2",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-surface": "#213145",
+                    "secondary-fixed": "#dbe1ff",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary-container": "#6c748b",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#62df7d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "xl": "40px",
+                    "lg": "24px",
+                    "gutter": "20px",
+                    "base": "4px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<link rel="stylesheet" href="tema.css"/>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden pb-20 md:pb-0">
+<a href="#viewContainer" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">İçeriğe atla</a>
+<!-- SEO Script Container -->
+<script id="json-ld-schema" type="application/ld+json"></script>
+
+<!-- ============ THEME SUBKEY (GÖMÜLÜ - SİLMEYİN) ============ -->
+<!-- dmoz-theme-key: DMOZ-QA-PRO-2024 :: embedded license, do not remove -->
+<meta name="dmoz-theme" content="DMOZ-QA-PRO-2024" data-subkey="dmoz_qa_embedded_key_v1"/>
+<!-- ========================================================= -->
+
+<!-- TopAppBar -->
+<header class="glass-effect text-primary fixed top-0 w-full z-50 border-b border-outline-variant/30 h-16 transition-shadow duration-300" id="topHeader">
+<div class="flex items-center justify-between px-3 sm:px-md max-w-container-max mx-auto h-full gap-2 sm:gap-4">
+<a class="flex items-center gap-2 group shrink-0" href="/forum/">
+<span class="material-symbols-outlined text-2xl sm:text-3xl group-hover:scale-110 transition-transform">forum</span>
+<h1 class="font-headline-lg text-lg sm:text-headline-lg font-bold text-primary leading-none tracking-tight whitespace-nowrap">DMOZ Q&amp;A</h1>
+</a>
+<div class="hidden md:flex flex-1 max-w-xl relative">
+<div class="w-full flex items-center bg-surface-container border border-outline-variant/50 rounded-full px-4 py-2 hover:border-primary focus-within:border-primary transition-all shadow-inner group">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md" id="ajaxSearch" placeholder="Dizin içinde soru ara..." type="text"/>
+<div class="hidden items-center gap-1 bg-primary/10 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold" id="searchBadge">
+<span class="w-1.5 h-1.5 rounded-full bg-primary pulse-live"></span> CANLI
+</div>
+</div>
+<div class="hidden absolute top-12 left-0 w-full bg-white rounded-xl shadow-xl border border-outline-variant/20 p-2 z-50" id="searchResults"></div>
+</div>
+<div class="flex items-center gap-1 sm:gap-2 md:gap-3 shrink-0">
+<!-- Mobil Arama -->
+<button aria-label="Ara" class="md:hidden hover:bg-primary-container/20 transition-colors p-2 rounded-full active:scale-95" id="mobileSearchBtn">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<!-- Messages -->
+<button aria-label="Mesajlar" class="relative max-md:hidden hover:bg-primary-container/20 transition-colors p-2 rounded-full active:scale-95 hidden" id="messagesBtn">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span class="absolute top-0.5 right-0.5 min-w-[18px] h-[18px] px-1 bg-error rounded-full border-2 border-surface hidden items-center justify-center text-[10px] text-white font-bold" id="messageBadge">0</span>
+</button>
+<!-- Notifications -->
+<button aria-label="Bildirimler" class="relative max-md:hidden hover:bg-primary-container/20 transition-colors p-2 rounded-full active:scale-95" id="notificationsBtn">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full notif-dot notif-blink hidden" id="notifPulseDot"></span>
+<span class="absolute top-0.5 right-0.5 min-w-[18px] h-[18px] px-1 bg-error rounded-full border-2 border-surface hidden items-center justify-center text-[10px] text-white font-bold" id="notificationDot">0</span>
+</button>
+<!-- Admin -->
+<button aria-label="Yönetim" class="relative hover:bg-primary-container/20 transition-colors p-2 rounded-full active:scale-95 hidden" id="adminBtn">
+<span class="material-symbols-outlined text-2xl">shield_person</span>
+</button>
+<!-- User Area -->
+<div id="userProfileArea" class="shrink-0"></div>
+</div>
+</div>
+</header>
+<!-- Mobil Arama Paneli -->
+<div class="md:hidden hidden fixed top-16 inset-x-0 z-40 bg-surface border-b border-outline-variant/30 p-3 shadow-lg" id="mobileSearchPanel">
+<div class="w-full flex items-center bg-surface-container border border-outline-variant/50 rounded-full px-4 py-2 focus-within:border-primary transition-all shadow-inner">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md" id="ajaxSearchMobile" placeholder="Dizin içinde soru ara..." type="text"/>
+</div>
+<div class="hidden mt-2 w-full bg-white rounded-xl shadow-xl border border-outline-variant/20 p-2" id="searchResultsMobile"></div>
+</div>
+
+<main class="max-w-container-max mx-auto px-md pt-24 pb-12" id="main-content">
+<nav class="flex items-center gap-2 text-label-md font-label-md text-secondary mb-6 overflow-x-auto whitespace-nowrap pb-2" id="breadcrumb">
+<a class="flex items-center gap-1 hover:text-primary transition-colors" href="/forum/"><span class="material-symbols-outlined text-sm">home</span></a>
+<span class="material-symbols-outlined text-xs text-outline">chevron_right</span>
+<span class="text-on-surface-variant font-bold" id="breadcrumbCurrent">Anasayfa</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 space-y-6" id="viewContainer">
+<section class="glass-effect rounded-xl p-8 border border-primary-container/20 shadow-md relative overflow-hidden group">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl group-hover:bg-primary-fixed-dim/30 transition-all duration-700"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold mb-2">Aklına takılan bir soru mu var?</h2>
+<p class="text-on-surface-variant font-body-md max-w-md">DMOZ topluluğunun binlerce uzman üyesi sana yardımcı olmak için burada.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container flex items-center justify-center gap-2 px-8 py-4 rounded-full font-headline-md text-headline-md shadow-lg hover:shadow-primary-container/20 hover:scale-105 transition-all active:scale-95 group/btn" id="openModalBtn">
+<span class="material-symbols-outlined group-hover/btn:rotate-180 transition-transform duration-500">add_circle</span> Soru Sor
+</button>
+</div>
+</section>
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-8 bg-primary rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold" id="listTitle">Son Sorular</h3>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg">
+<button class="bg-white px-4 py-1.5 rounded shadow-sm text-label-md font-label-md text-primary transition-colors" id="sortNew">Yeni</button>
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface-variant hover:bg-white/50 transition-colors" id="sortPopular">Popüler</button>
+</div>
+</div>
+<div class="space-y-4" id="questionsContainer">
+<div class="h-32 bg-surface-container-low border border-dashed border-outline-variant/50 rounded-xl animate-pulse flex items-center justify-center text-on-surface-variant/40">Yükleniyor...</div>
+</div>
+</div>
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-gradient-to-br from-inverse-surface via-inverse-surface to-primary/20 text-surface rounded-2xl p-6 shadow-xl relative overflow-hidden border border-white/5">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between mb-6 relative">
+<h5 class="font-headline-md text-headline-md font-bold flex items-center gap-2"><span class="material-symbols-outlined text-primary-container">query_stats</span>Topluluk Verileri</h5>
+<div class="flex items-center gap-1.5 bg-error/90 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest shrink-0">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-ping"></span> CANLI
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 sm:gap-3 relative">
+<div class="p-3 sm:p-4 bg-white/10 rounded-xl border border-white/5 hover:bg-white/15 transition-colors text-center sm:text-left">
+<span class="material-symbols-outlined text-primary-container text-lg mb-1 hidden sm:inline-block">help</span>
+<p class="text-white/60 text-[10px] font-label-sm mb-0.5 uppercase tracking-tighter">Soru</p>
+<p class="text-xl sm:text-2xl font-bold font-headline-md leading-tight" id="statTotalQuestions">…</p>
+</div>
+<div class="p-3 sm:p-4 bg-white/10 rounded-xl border border-white/5 hover:bg-white/15 transition-colors text-center sm:text-left">
+<span class="material-symbols-outlined text-primary-container text-lg mb-1 hidden sm:inline-block">forum</span>
+<p class="text-white/60 text-[10px] font-label-sm mb-0.5 uppercase tracking-tighter">Cevap</p>
+<p class="text-xl sm:text-2xl font-bold font-headline-md leading-tight" id="statTotalAnswers">…</p>
+</div>
+<div class="p-3 sm:p-4 bg-white/10 rounded-xl border border-white/5 hover:bg-white/15 transition-colors text-center sm:text-left">
+<span class="material-symbols-outlined text-primary-container text-lg mb-1 hidden sm:inline-block">group</span>
+<p class="text-white/60 text-[10px] font-label-sm mb-0.5 uppercase tracking-tighter">Üye</p>
+<p class="text-xl sm:text-2xl font-bold font-headline-md leading-tight" id="statActiveExperts">…</p>
+</div>
+</div>
+<div class="mt-6 border-t border-white/10 pt-5 relative">
+<p class="font-label-md text-label-md text-white/80 mb-3 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full online-dot"></span>Çevrimiçi Üyeler</p>
+<ul class="space-y-1" id="onlineUsers"><li class="text-white/40 text-xs">Yükleniyor...</li></ul>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-6 border border-outline-variant/30">
+<h5 class="font-headline-md text-headline-md text-on-surface font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_tree</span> Kategoriler
+</h5>
+<ul class="space-y-1" id="categoryList"></ul>
+<a class="block w-full mt-4 text-center py-2 text-label-md font-label-md text-primary hover:underline transition-all" href="/forum/">Tüm Dizinleri Gör</a>
+</div>
+</aside>
+</div>
+</main>
+
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface fixed bottom-0 w-full z-40 rounded-t-xl border-t border-outline-variant/50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-sm">
+<a class="flex flex-col items-center justify-center text-primary-container bg-primary-container/10 rounded-full px-4 py-1" href="/forum/">
+<span class="material-symbols-outlined">home</span><span class="font-label-sm text-label-sm">Anasayfa</span>
+</a>
+<button class="flex flex-col items-center justify-center text-on-surface-variant" id="mobileMsgBtn">
+<span class="material-symbols-outlined">chat</span><span class="font-label-sm text-label-sm">Mesaj</span>
+</button>
+<button aria-label="Soru Sor" class="flex flex-col items-center justify-center text-on-surface-variant -mt-10" id="mobileAskBtn">
+<div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">add</span>
+</div>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant relative" id="mobileNotifBtn">
+<span class="relative inline-flex"><span class="material-symbols-outlined">notifications</span><span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full notif-dot notif-blink hidden" id="mobileNotifDot"></span></span><span class="font-label-sm text-label-sm">Bildirim</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant" id="mobileProfileBtn">
+<span class="material-symbols-outlined">person</span><span class="font-label-sm text-label-sm">Profil</span>
+</button>
+</nav>
+
+<!-- ============ AUTH MODAL (Giriş / Kayıt) ============ -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm" id="authModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/30">
+<div class="flex border-b border-outline-variant">
+<button class="flex-1 py-4 font-headline-md text-headline-md text-primary border-b-2 border-primary" id="tabLogin" data-tab="login">Giriş Yap</button>
+<button class="flex-1 py-4 font-headline-md text-headline-md text-on-surface-variant border-b-2 border-transparent" id="tabRegister" data-tab="register">Üye Ol</button>
+<button aria-label="Kapat" class="material-symbols-outlined p-4 hover:bg-surface-container transition-colors" id="closeAuthBtn">close</button>
+</div>
+<!-- Login Form -->
+<form class="p-6 space-y-4" id="loginForm">
+<!-- Bot tuzağı: gerçek kullanıcılar bu alanı görmez/doldurmaz -->
+<input type="text" name="website" id="loginHoneypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Kullanıcı adı veya E-posta</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="loginIdentifier" required type="text" placeholder="kullaniciadi"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Şifre</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="loginPassword" required type="password" placeholder="••••••••"/>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-lg font-headline-md text-headline-md shadow hover:bg-primary transition-all active:scale-95" type="submit">Giriş Yap</button>
+<button type="button" class="w-full text-center text-label-md font-label-md text-secondary hover:underline" id="forgotBtn">Şifremi Unuttum?</button>
+</form>
+<!-- Register Form -->
+<form class="p-6 space-y-4 hidden" id="registerForm">
+<input type="text" name="website" id="registerHoneypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Kullanıcı Adı</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="regUsername" required type="text" placeholder="kullaniciadi" minlength="3"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">E-posta Adresi</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="regEmail" required type="email" placeholder="ornek@mail.com"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Şifre</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="regPassword" required type="password" placeholder="En az 6 karakter" minlength="6"/>
+</div>
+<p class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined verified-tick text-base">verified</span> Üye olunca otomatik mavi tik kazanırsın!</p>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-lg font-headline-md text-headline-md shadow hover:bg-primary transition-all active:scale-95" type="submit">Üye Ol</button>
+</form>
+</div>
+</div>
+
+<!-- ============ QUESTION MODAL (Zengin Editör) ============ -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm" id="questionModal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/30 flex flex-col max-h-[90vh]">
+<div class="p-6 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Yeni Konu / Soru Paylaş</h3>
+<button aria-label="Kapat" class="material-symbols-outlined p-2 hover:bg-surface-container rounded-full transition-colors" id="closeModalBtn">close</button>
+</div>
+<form class="p-6 space-y-5 overflow-y-auto scroll-thin" id="askQuestionForm">
+<input type="text" name="website" id="askHoneypot" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Konu Başlığı</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="qTitle" name="title" placeholder="Merak ettiğiniz konuyu kısaca belirtin..." required type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Kategori</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="qCategory" name="category"></select>
+</div>
+<!-- Rich Editor Toolbar -->
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">İçerik</label>
+<div class="border border-outline-variant rounded-lg overflow-hidden">
+<div class="flex flex-wrap items-center gap-1 bg-surface-container-low border-b border-outline-variant px-2 py-1.5">
+<button type="button" class="editor-tool p-2 rounded hover:bg-white" data-cmd="bold" title="Kalın"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button type="button" class="editor-tool p-2 rounded hover:bg-white" data-cmd="italic" title="İtalik"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button type="button" class="editor-tool p-2 rounded hover:bg-white" data-cmd="insertUnorderedList" title="Liste"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<button type="button" class="editor-tool p-2 rounded hover:bg-white" data-cmd="formatBlock" data-val="blockquote" title="Alıntı"><span class="material-symbols-outlined text-lg">format_quote</span></button>
+<span class="w-px h-5 bg-outline-variant mx-1"></span>
+<button type="button" class="p-2 rounded hover:bg-white" id="insertImageBtn" title="Resim Ekle"><span class="material-symbols-outlined text-lg">image</span></button>
+<button type="button" class="p-2 rounded hover:bg-white" id="insertVideoBtn" title="Video Ekle"><span class="material-symbols-outlined text-lg">smart_display</span></button>
+<button type="button" class="p-2 rounded hover:bg-white" id="insertLinkBtn" title="Bağlantı"><span class="material-symbols-outlined text-lg">link</span></button>
+</div>
+<div class="editor-content p-4 min-h-[160px] focus:outline-none text-on-surface" id="richEditor" contenteditable="true" data-placeholder="Sorunuzu detaylandırın, resim/video ekleyebilirsiniz..."></div>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Etiketler</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary outline-none" id="qTags" name="tags" placeholder="virgül ile ayırın..." type="text"/>
+</div>
+<div class="border-t border-outline-variant bg-surface-container-low -mx-6 -mb-6 px-6 py-4 flex justify-end gap-3 mt-4 sticky bottom-0">
+<button class="px-6 py-2.5 rounded-lg text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant/20 transition-colors" id="cancelModalBtn" type="button">Vazgeç</button>
+<button class="bg-primary-container text-on-primary-container px-8 py-2.5 rounded-lg font-headline-md text-headline-md shadow hover:bg-primary transition-all active:scale-95" type="submit">Yayınla</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- ============ DRAWERS (Bildirim / Mesaj / Profil / Admin) ============ -->
+<div class="fixed inset-0 z-[90] hidden bg-on-surface/40 backdrop-blur-sm" id="drawerOverlay"></div>
+
+<!-- Notifications Drawer -->
+<div class="drawer fixed top-0 right-0 h-full w-full max-w-sm bg-surface z-[95] shadow-2xl translate-x-full flex flex-col" id="notifDrawer">
+<div class="p-5 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-bold flex items-center gap-2"><span class="material-symbols-outlined">notifications</span> Bildirimler</h3>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container rounded-full close-drawer">close</button>
+</div>
+<div class="flex-1 overflow-y-auto scroll-thin p-3 space-y-2" id="notifList"></div>
+</div>
+
+<!-- Messages Drawer -->
+<div class="drawer fixed top-0 right-0 h-full w-full max-w-md bg-surface z-[95] shadow-2xl translate-x-full flex flex-col" id="msgDrawer">
+<div class="p-5 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-bold flex items-center gap-2"><span class="material-symbols-outlined" id="msgBackBtn">chat</span> <span id="msgDrawerTitle">Mesajlar</span></h3>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container rounded-full close-drawer">close</button>
+</div>
+<div class="flex-1 overflow-y-auto scroll-thin" id="msgConversations"></div>
+<div class="hidden flex-1 flex-col" id="msgThread">
+<div class="flex-1 overflow-y-auto scroll-thin p-4 space-y-3" id="msgThreadBody"></div>
+<form class="p-3 border-t border-outline-variant flex items-center gap-2" id="msgSendForm">
+<input class="flex-1 bg-surface-container-low border border-outline-variant rounded-full px-4 py-2.5 focus:ring-2 focus:ring-primary outline-none" id="msgInput" placeholder="Mesaj yaz..." autocomplete="off"/>
+<button class="bg-primary-container text-on-primary-container w-11 h-11 rounded-full flex items-center justify-center shrink-0 active:scale-95" type="submit"><span class="material-symbols-outlined">send</span></button>
+</form>
+</div>
+</div>
+
+<!-- Admin Drawer -->
+<div class="drawer fixed top-0 right-0 h-full w-full max-w-lg bg-surface z-[95] shadow-2xl translate-x-full flex flex-col" id="adminDrawer">
+<div class="p-5 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-error font-bold flex items-center gap-2"><span class="material-symbols-outlined">shield_person</span> Yönetim Paneli</h3>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container rounded-full close-drawer">close</button>
+</div>
+<div class="flex border-b border-outline-variant text-sm">
+<button class="flex-1 py-3 font-bold text-primary border-b-2 border-primary admin-tab" data-atab="users">Üyeler</button>
+<button class="flex-1 py-3 font-bold text-on-surface-variant border-b-2 border-transparent admin-tab" data-atab="questions">Konular</button>
+<button class="flex-1 py-3 font-bold text-on-surface-variant border-b-2 border-transparent admin-tab" data-atab="categories">Kategoriler</button>
+</div>
+<div class="flex-1 overflow-y-auto scroll-thin p-4">
+<div id="adminUsers" class="space-y-2"></div>
+<div id="adminQuestions" class="space-y-2 hidden"></div>
+<div id="adminCategories" class="space-y-3 hidden">
+<form class="flex gap-2" id="adminAddCatForm">
+<input class="flex-1 bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary" id="adminNewCat" placeholder="Yeni kategori adı..."/>
+<button class="bg-primary-container text-on-primary-container px-4 rounded-lg font-bold" type="submit">Ekle</button>
+</form>
+<div id="adminCatList" class="space-y-2"></div>
+</div>
+</div>
+</div>
+
+<!-- ============ EDIT PROFILE MODAL ============ -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm" id="editProfileModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden border border-outline-variant/30 flex flex-col max-h-[90vh]">
+<div class="p-6 border-b border-outline-variant flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Profili Düzenle</h3>
+<button aria-label="Kapat" class="material-symbols-outlined p-2 hover:bg-surface-container rounded-full" id="closeEditProfile">close</button>
+</div>
+<form class="p-6 space-y-4 overflow-y-auto scroll-thin" id="editProfileForm">
+<div class="flex items-center gap-4">
+<img id="editAvatarPreview" class="w-20 h-20 rounded-full object-cover border-2 border-primary-container" alt="Avatar"/>
+<div>
+<label class="bg-surface-container px-4 py-2 rounded-lg text-label-md font-label-md text-primary cursor-pointer hover:bg-surface-container-high transition-colors inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">photo_camera</span> Avatar Yükle
+<input type="file" accept="image/*" class="hidden" id="avatarFile"/>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div><label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Ad Soyad</label><input id="epFullName" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/></div>
+<div><label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Şehir</label><input id="epCity" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/></div>
+<div><label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Burç</label>
+<select id="epZodiac" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary">
+<option value="">Seçiniz</option><option>Koç</option><option>Boğa</option><option>İkizler</option><option>Yengeç</option><option>Aslan</option><option>Başak</option><option>Terazi</option><option>Akrep</option><option>Yay</option><option>Oğlak</option><option>Kova</option><option>Balık</option>
+</select></div>
+<div><label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Meslek</label><input id="epProfession" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/></div>
+</div>
+<div><label class="block text-label-md font-label-md text-on-surface-variant mb-1.5">Hakkımda</label><textarea id="epBio" rows="2" class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"></textarea></div>
+<p class="text-label-md font-label-md text-on-surface-variant font-bold pt-2">Sosyal Medya</p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<input id="epTwitter" placeholder="Twitter/X" class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/>
+<input id="epInstagram" placeholder="Instagram" class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/>
+<input id="epWebsite" placeholder="Web sitesi" class="bg-surface-container-low border border-outline-variant rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-primary"/>
+</div>
+<div class="flex justify-end gap-3 pt-2">
+<button type="button" class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-variant/20" id="cancelEditProfile">Vazgeç</button>
+<button type="submit" class="bg-primary-container text-on-primary-container px-8 py-2.5 rounded-lg font-headline-md text-headline-md shadow hover:bg-primary transition-all active:scale-95">Kaydet</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- Toast -->
+<div class="fixed bottom-24 right-8 bg-inverse-surface text-surface px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-32 opacity-0 transition-all duration-500 z-[110]" id="toast">
+<span class="material-symbols-outlined text-primary-fixed" id="toastIcon">check_circle</span>
+<div class="flex flex-col">
+<p class="font-bold text-sm" id="toastTitle">İşlem Başarılı!</p>
+<p class="text-xs text-white/70" id="toastMessage"></p>
+</div>
+</div>
+
+<script src="tema.js" defer></script>
+<!-- Service Worker: statik varlıkları önbelleğe alır (offline destek + hızlı tekrar ziyaret).
+     Supabase API istekleri kasıtlı olarak önbelleklenmez (her zaman güncel veri). -->
+<script>
+    if('serviceWorker' in navigator){
+        window.addEventListener('load',()=>{
+            navigator.serviceWorker.register('/forum/sw.js').catch(err=>console.warn('[v0] SW kaydı başarısız',err));
+        });
+    }
+</script>
+</body></html>

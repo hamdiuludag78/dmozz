@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="robots" content="noindex"/>
+<title>DMOZ Q&amp;A</title>
+<script>
+  /* ==========================================================
+     SPA 404 YÖNLENDİRME — sunucudan bağımsız çalışır
+     /forum/1/genel/baslik.html gibi bir adrese doğrudan
+     girildiğinde (bookmark, paylaşım linki, Google sonucu vb.)
+     sunucuda böyle bir dosya olmadığı için bu 404 sayfası
+     devreye girer ve isteği index.html'e, adresi koruyarak
+     yönlendirir. GitHub Pages'te otomatik çalışır; diğer
+     sunucularda .htaccess içindeki ErrorDocument 404 satırı
+     bu dosyayı devreye sokar.
+     ========================================================== */
+  (function(){
+    var BASE = '/forum/'; // Uygulamanın kök klasörü. Farklı bir alt klasöre
+                           // taşırsanız SADECE bu satırı güncelleyin.
+    var path = window.location.pathname;
+    var rest = path.indexOf(BASE) === 0 ? path.slice(BASE.length) : path.replace(/^\//,'');
+    var extra = window.location.search ? window.location.search.slice(1) : '';
+    var target = BASE + '?__redirect=' + encodeURIComponent(rest) + (extra ? ('&'+extra) : '') + window.location.hash;
+    window.location.replace(target);
+  })();
+</script>
+</head>
+<body>
+<p style="font-family:sans-serif;text-align:center;margin-top:40px;color:#666">Yönlendiriliyor…</p>
+</body>
+</html>
