@@ -7,7 +7,7 @@
 <script>
   /* ==========================================================
      SPA 404 YÖNLENDİRME — sunucudan bağımsız çalışır
-     /forum/1/genel/baslik.html gibi bir adrese doğrudan
+     /1/genel/baslik.html gibi bir adrese doğrudan
      girildiğinde (bookmark, paylaşım linki, Google sonucu vb.)
      sunucuda böyle bir dosya olmadığı için bu 404 sayfası
      devreye girer ve isteği index.html'e, adresi koruyarak
@@ -16,7 +16,7 @@
      bu dosyayı devreye sokar.
      ========================================================== */
   (function(){
-    var BASE = '/forum/'; // Uygulamanın kök klasörü. Farklı bir alt klasöre
+    var BASE = '/'; // Uygulamanın kök klasörü. Farklı bir alt klasöre
                            // taşırsanız SADECE bu satırı güncelleyin.
     var path = window.location.pathname;
     var rest = path.indexOf(BASE) === 0 ? path.slice(BASE.length) : path.replace(/^\//,'');
