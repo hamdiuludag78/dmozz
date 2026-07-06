@@ -1,35 +1,15 @@
-# ==========================================
-# Optimized robots.txt for dmoz-sitemap Project
-# ==========================================
-
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /?q=
 
-# Disallow common junk paths, administration and systemic folders
-Disallow: /sitemap/_site/
-Disallow: /sitemap/.github/
-Disallow: /sitemap/node_modules/
-Disallow: /sitemap/package.json
-Disallow: /sitemap/package-lock.json
-Disallow: /sitemap/update_sitemap.js
-Disallow: /sitemap/sitemap-generator.yml
+Sitemap: https://hamdiuludag78.github.io/dmozz/sitemap.xml
+Sitemap: https://hamdiuludag78.github.io/dmozz/news-sitemap.xml
 
-# Crawl-delay for aggressive bots to protect performance
-User-agent: Baiduspider
-Crawl-delay: 10
+# Crawl delay
+Crawl-delay: 1
 
-User-agent: YandexBot
-Crawl-delay: 10
-
-User-agent: YandexBot
-Crawl-delay: 10
-
-User-agent: AIBot
-Crawl-delay: 10
-
-
-# Host declaration for clarity
-Host: https://dmozz.eu.cc/
-
-# Primary Dynamic XML Sitemap Location
-Sitemap: https://dmozz.eu.cc/sitemap/sitemap.xml
+# Google News
+User-agent: Googlebot-News
+Allow: /

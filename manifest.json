@@ -1,0 +1,99 @@
+{
+  "name": "DMOZZ NEWS PRO",
+  "short_name": "DMOZZ",
+  "description": "Google News seviyesinde çalışan, tamamen istemci taraflı modern haber portalı",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1B7F3C",
+  "background_color": "#FFFFFF",
+  "categories": ["news", "productivity"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%231B7F3C' width='540' height='720'/></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'><rect fill='%231B7F3C' width='1280' height='720'/></svg>",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231B7F3C' width='192' height='192'/><text x='96' y='110' font-size='120' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Arial'>D</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231B7F3C' width='192' height='192' rx='50'/><text x='96' y='110' font-size='120' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Arial'>D</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%231B7F3C' width='512' height='512'/><text x='256' y='300' font-size='320' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Arial'>D</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Son Dakika Haberler",
+      "short_name": "Son Dakika",
+      "description": "En son haber güncellemeleri",
+      "url": "./index.html#/category/son-dakika",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23F39C12' width='192' height='192'/><text x='96' y='110' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>⚡</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Trend Haberler",
+      "short_name": "Trend",
+      "description": "Günümüzün en popüler haberleri",
+      "url": "./index.html#/category/trend",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23E74C3C' width='192' height='192'/><text x='96' y='110' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>🔥</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Teknoloji Haberleri",
+      "short_name": "Teknoloji",
+      "description": "Teknoloji sektöründen en yeni gelişmeler",
+      "url": "./index.html#/category/teknoloji",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234A90E2' width='192' height='192'/><text x='96' y='110' font-size='100' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>💻</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "./share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "related_applications": [],
+  "prefer_related_applications": false
+}
